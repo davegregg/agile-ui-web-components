@@ -326,3 +326,7 @@ img.padded {
   justify-content: center; }
   .normal-text .lower {
     color: #A1887F; }
+
+table.compatibility th, table.compatibility td {
+  width: 33%;
+  text-align: center; }

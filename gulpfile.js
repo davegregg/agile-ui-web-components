@@ -1,10 +1,11 @@
-var bs, gulp, sass, web;
+var bs, gulp, sass, server, web;
 
 bs = require('browser-sync').create();
 gulp = require('gulp');
 sass = require('gulp-sass');
+server = require('gulp-webserver');
 
-gulp.task('default', [ 'web' ]);
+gulp.task('default', [ 'serve' ]);
 
 gulp.task('dev', [ 'web', 'watch' ]);
 
@@ -20,11 +21,16 @@ gulp.task('watch', [ 'sass' ], function () {
   gulp.watch('index.html', bs.reload);
 });
 
+gulp.task('serve', function () {
+  return gulp.src('./')
+    .pipe(server());
+});
+
 gulp.task('web', function () {
   bs.init({
     server: {
       baseDir: './'
     },
-    browser: 'google chrome canary'
+    browser: 'google chrome'
   });
 });
