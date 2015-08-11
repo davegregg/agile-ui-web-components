@@ -1,0 +1,20 @@
+{
+  "name": "agile-ui-web-components",
+  "version": "1.0.0",
+  "homepage": "https://github.com/realistschuckle/agile-ui-web-components",
+  "authors": [
+    "Curtis Schlak <realistschuckle@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}

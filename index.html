@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/blood.css" id="theme">
     <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="/bower_components/dumb-button/dumb-button.html">
   </head>
 
   <body>
@@ -495,7 +498,165 @@ shadow.innerHTML += "&lt;style&gt;p { color: red };&lt;/style&gt;";
               <li>work one iteration ahead</li>
               <li>identify cross-cutting components</li>
               <li>identify one-off components</li>
+              <li>schedule screen/page and component creation separately</li>
             </ul>
+            <aside class="notes">
+              Talk about each of these things.
+            </aside>
+          </section>
+          <section>
+            <h2>thorns</h2>
+            <ul>
+              <li>constant backlog prioritization change</li>
+              <li>old browser support</li>
+              <li>not building an app</li>
+              <li>page-centric definition of done</li>
+            </ul>
+            <aside class="notes">
+              Talk about each of these things.
+            </aside>
+          </section>
+        </section>
+        <section data-background="#4E342E">
+          <section>
+            <h1>practical implementations</h1>
+          </section>
+          <section>
+            <h2>using raw tools suxorz</h2>
+          </section>
+          <section>
+            <h2>polymer to the rescue</h2>
+            <p>
+              <div style="background-color: white; display: inline-block; border-radius: 8px;">
+                <img src="/imgs/polymer-logo.svg" style="border: 0; box-shadow: none;">
+              </div>
+            </p>
+            <aside class="notes">
+              <ul>
+                <li>history of polymer</li>
+                <li>auto polyfills the missing tech</li>
+                <li>shadow DOM vs. shady DOM</li>
+                <li>data binding</li>
+                <li>CSS variables</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h2>elements.polymer-project.org</h2>
+            <iframe height="500" width="1024" src="https://elements.polymer-project.org"></iframe>
+            <aside class="notes">
+              Polymer gives you some basic web components, as well, in their
+              elements library. Talk about each of the sections.
+            </aside>
+          </section>
+          <section>
+            <h2>customelements.io</h2>
+            <iframe height="500" width="1024" src="https://customelements.io/"></iframe>
+            <aside class="notes">
+              There's also a growing library of available open-source Web
+              components and a community around it those based on Polymer and
+              those written from the ground up.
+            </aside>
+          </section>
+        </section>
+        <section data-background="#D84315">
+          <section>
+            <h1>Build a Web Component</h1>
+          </section>
+          <section>
+            <h2>the world's dumbest button</h2>
+            <p>
+              <dumb-button>Push me</dumb-button>
+            </p>
+            <pre><code data-trim>
+              &lt;dumb-button&gt;Push me&lt;/dumb-button&gt;
+            </code></pre>
+          </section>
+          <section>
+            <h3>import polymer</h3>
+            <pre><code data-trim>
+&lt;link rel="import" href="../polymer/polymer.html"&gt;
+            </code></pre>
+          </section>
+          <section>
+            <h3>declare the dom-module</h3>
+            <pre><code data-trim>
+&lt;dom-module id="dumb-button"&gt;
+&lt;/dom-module&gt;
+            </code></pre>
+          </section>
+          <section>
+            <h3>put in the style</h3>
+            <pre><code data-trim>
+&lt;style&gt;
+  :host {
+    display: inline-block;
+  }
+
+  button {
+    font-size: 24px;
+    padding: 0.2em 0.4em;
+    border: 0;
+    background-color: white;
+  }
+
+  button:active {
+    background-color: green;
+  }
+&lt;/style&gt;
+            </code></pre>
+          </section>
+          <section>
+            <h3>put in the template</h3>
+            <pre><code data-trim>
+&lt;template&gt;
+  &lt;button id="clickable"&gt;&lt;content&gt;&lt;/content&gt;&lt;/button&gt;
+  &lt;audio id="sound" src="./button-sound.wav"&gt;&lt;/audio&gt;
+&lt;/template&gt;
+            </code></pre>
+          </section>
+          <section>
+            <h3>put in the behavior</h3>
+            <pre><code data-trim>
+&lt;script&gt;
+  Polymer({
+    is: "dumb-button",
+
+    ready: function () {
+      var self = this;
+      this.$.clickable.addEventListener('click', function () {
+        self.$.sound.play();
+      });
+    }
+  });
+&lt;/script&gt;
+            </code></pre>
+          </section>
+          <section>
+            <h2>and you get the dumbest button. ever.</h2>
+            <p>
+              <dumb-button>Push me</dumb-button>
+            </p>
+            <p>
+              <button>Push me</button>
+            </p>
+          </section>
+        </section>
+        <section data-background="#4E342E">
+          <section>
+            <h1>And, that's what I've got so far</h1>
+          </section>
+          <section>
+            <h2>contact info</h2>
+            <p>
+              <a href="mailto:curtis@schlak.com">curtis@schlak.com</a>
+            </p>
+            <p>
+              <a href="http://twitter.com/realistschuckle">@realistschuckle</a>
+            </p>
+          </section>
+          <section>
+            <h2>conversation?</h2>
           </section>
         </section>
       </div>

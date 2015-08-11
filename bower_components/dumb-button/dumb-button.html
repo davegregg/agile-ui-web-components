@@ -1,0 +1,38 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="dumb-button">
+  <style>
+    :host {
+      display: inline-block;
+    }
+
+    button {
+      font-size: 36px;
+      padding: 0.2em 0.4em;
+      border: 0;
+      background-color: white;
+    }
+
+    button:active {
+      background-color: green;
+    }
+  </style>
+
+  <template>
+    <button id="clickable"><content></content></button>
+    <audio id="sound" src="./button-sound.wav"></audio>
+  </template>
+
+  <script>
+    Polymer({
+      is: "dumb-button",
+
+      ready: function () {
+        var self = this;
+        this.$.clickable.addEventListener('click', function () {
+          self.$.sound.play();
+        });
+      }
+    });
+  </script>
+</dom-module>
