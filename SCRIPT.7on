@@ -1,0 +1,31 @@
+SLIDE 7/0
+
+    // Change the slide to read "A Call for a Different Workflow"
+
+    This is where we start with the soft part of this presentation.
+    Consider this a call and a catalyst for a conversation about
+    developing a different way that we engage the needs of our users.
+    While I originally presented this talk in the context of user
+    experience, I have expanded the ideas. However, I will constrain
+    this presentation to the user experience aspects.
+
+SLIDE 7/1
+
+    // Change the slide to read "interaction-driven development"
+
+    The pathetic fallacy informs us that when we give a name to
+    something, then we end up caring more about it. So, I've given the
+    name "interaction-driven development" to this thing. Instead of
+    organizing our development around functionality in user stories or
+    use cases, we slice through the layers of our software to muster
+    our effort around completing interactions that the software has,
+    either with the user, other applications, within its own
+    architecture, or because of environmental influences.
+
+    For the purpose of this presentation, again, I limit the
+    monologue to the user experience aspect of interaction-driven
+    development.
+
+SLIDE 7/2
+
+    Because IDD
