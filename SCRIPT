@@ -1,0 +1,231 @@
+SLIDE 0/0
+
+      «intro»
+
+SLIDE 1/0
+
+      Welcome to the unbelievably badly named presentation
+      ADOTUEWWC, or Agile Development of the User Experience
+      with Web Components. I've created this presentation as
+      a catalyst for conversation about building an agile
+      process for the user experience in context of Web
+      development.
+
+      This presentation is a blend of philosophy and
+      technology, thoughts and programming. All of its
+      content may not apply to you. For that matter, none
+      of the content may apply to you. Sorry if that's
+      true.
+
+SLIDE 2/0
+
+      Because I want you to share this presentation, because
+      I want you to show this presentation, because I want
+      feedback, feel free to hack it, fork it, color it,
+      whatever. Just keep the attribution and don't sell it.
+
+SLIDE 3/0
+
+      I am Curtis Schlak. You can find me on npm, Github,
+      Twitter, and Skype as "realistschuckle". You can
+      send me an email at curtis at schlak.com.
+
+SLIDE 4/0
+
+      Firstly, I'd like to catch up with you on what I mean
+      by "user experience" because, as so many things in the
+      software industry, it has an ambiguous definition.
+
+SLIDE 4/1
+
+      Every time I get to this slide, the audience laughs
+      or groans or laughs and groans, like they whacked
+      their funny bones on a table corner. I really like
+      this example. It seems to elicit a visceral reaction
+      of disgust. I want to try to break down why people
+      have such a strong reaction to something like this.
+
+SLIDE 4/2
+
+      Right now, I split the three aspects of user
+      experience into three axes of design.
+
+      Ambience applies to the consistency of theme. This
+      applies to the underlying colors and contrasts. It
+      applies to background music and sounds, for those of
+      us lucky (or unlucky) enough to make computer games.
+
+      When I say mechanics, I apply this to every
+      interactive element of a user interface, from the
+      most mundane check box to the most innovative
+      3D-enabled interface. When something changes
+      autonomously based on the system and notifies the
+      user through a visual or audio prompt, when
+      something reacts and changes based on user
+      interaction, when an audio prompt informs a user
+      that something has succeeded, when a device
+      vibrates to inform the user that something of
+      interest has happened, these are the mechanics,
+      the application interaction.
+
+      Finally, I have borrowed the term throughput from
+      Edward Tufte to describe how well the interface
+      communicates the intent of the software to the user.
+      This can mean graphs and charts to report aggregated
+      data. However, it also applies to the layout of a
+      form to communicate to the user the ability to
+      accomplish the task of getting their information.
+
+SLIDE 5/0
+
+      My first real job as a programmer came about when
+      a marketing company hired me to start building Web
+      sites and Web applications for their clients.
+      During that time, I becamse intimately familiar with
+      the workflows used to create designs for all kinds
+      of media: magazine, radio, television, direct mail,
+      and the Web.
+
+      I realize that, even now, nearly 20 years after
+      the Web really started to come into its own, we
+      still use antiquated processes for static media as
+      bases for our workflows. This is what I see in our
+      industry.
+
+SLIDE 5/1
+
+      The traditional media starts with two teams,
+      copywriters and artists, talking about an idea
+      for how something should get designed. Then, they
+      work on it separately, and, eventually, some intern
+      gets to marry everything in publishing software.
+
+      We still do this, today, not as often as I saw 15
+      years ago, but it still happens. We have Web
+      designers go off and design interactions apart from
+      the people writing the functionality. Then, someone
+      gets to skin the functionality with something from 
+      the designers. This happened a lot back when
+      designers used Macromedia tools like Fireworks.
+
+SLIDE 5/2
+
+      In a knee-jerk reaction to two disparate teams
+      working in siloes, Web developers started building
+      Web applications that contained the most rudimentary
+      of interactions, no ambience, and markers for
+      high-density information screens. Then, when the app
+      worked completely, they would hand it off to so-called
+      front-end developers that would refine the
+      application's aesthetics and mechanics.
+
+      I know this still happens in a lot of "enterprise"
+      shops that builds in-house support software. Supporting
+      the business processes trumps the user experience.
+
+SLIDE 5/3
+
+      During the dot-com bubble during the nineties and
+      recently, I have seen this workflow engaged because it
+      is easy to use to wow investors. Put the idea out
+      there, in all of its glory, but without anything behind
+      it that would drive the business. This is a sales tactic,
+      a vaporware tactic, but an effective workflow to
+      generate the interactive representation of an
+      application. This usually shows a static representation
+      of the rich interaction that a cutting-edge idea needs,
+      so it gets us close.
+
+SLIDE 5/4
+
+      Over the past five years, the Web-development industry
+      has published very opinionated, easy-to-use, and
+      aesthetically pleasing frameworks such as Twitter
+      Bootstrap, Zurb Foundation, Yahoo! Pure, and others.
+      While these come with a tool chest stuffed full of
+      widgets and colors to fulfill the ambience and mechanics
+      of our Web applications, it also means that you lose
+      brand identity. We could probably invent a drinking
+      game that, every time you see a Web site based on
+      Bootstrap, you have to take a drink. You'll be drunk
+      after 30 minutes of browsing.
+
+SLIDE 5/5
+
+      I think that we need another way to prepare and
+      organize our work because we deal in a unique medium,
+      an interactive medium, an ever richer medium of
+      feedback and presentation and dimensions. I think we
+      need a different process based on a new way of
+      thinking.
+
+SLIDE 6/0
+
+      Normally, we get to think of things in a new way
+      when something comes along that allows us to think in
+      a new way. Web components allows us to do this.
+
+SLIDE 6/1
+
+      The first of the four standards included in Web
+      components is the custom elements standard. It allows
+      us to create and add new tags to HTML. And, the way to
+      do it is pretty simple.
+
+SLIDE 6/1/1
+
+      First, you register your custom element. To ensure
+      that you get the same methods that you would get for
+      a normal HTML element in the DOM, you can pass in a
+      prototype based on one of the HTML elements' prototypes
+      and add your own properties and methods. In this case,
+      we're creating an element named "declarative-ajax"
+      which, when attached to the DOM, would make an
+      asynchronous call for some data and, when received,
+      fire a data-received event to which you can subscribe
+      in your code.
+
+SLIDE 6/1/2
+
+      Then, you just use that new tag in your HTML as you
+      normally would any tag. This tag, declarative-ajax, is
+      one of the interesting parts of Web components, where
+      we challenge ourselves to make components which contain
+      no visual representation to replace boilerplate code
+      that we write in Web applications with a declarative
+      syntax. We could do the same thing with a Web
+      component that acts as an interface to local storage or
+      a dispatcher of local events.
+
+SLIDE 6/2
+
+      Our second standard of four is the template tag. We've
+      struggled with this idea of templates for a while, using
+      script blocks and parsing strings or fetching templates
+      from a server. The template tag makes this easier.
+
+SLIDE 6/2/1
+
+      Using a template tag is as easy as putting it in your
+      HTML. What's really cool about it, and I mean really cool,
+      is that the browser parses the HTML inside it and creates
+      the appropriate DOM structure, but does so without loading
+      images, running scripts, or applying styles. The content
+      of a template tag lives as a real HTML fragment but is
+      dead to the rest of the page. So, because it's both living
+      and dead, I like to call it ZOMBIE DOM.
+
+SLIDE 6/2/2
+
+      You use the template tag in JavaScript by getting a
+      reference to it in the DOM, accessing the content attribute
+      on it, cloning that content, and appending it to the
+      living DOM.
+
+      «Michael Caine accent»
+      Easy peasy lemon squeezy.
+
+SLIDE 6/3
+
+      
+

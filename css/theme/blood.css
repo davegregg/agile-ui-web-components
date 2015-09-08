@@ -327,6 +327,18 @@ img.padded {
   .normal-text .lower {
     color: #A1887F; }
 
-table.compatibility th, table.compatibility td {
-  width: 33%;
-  text-align: center; }
+table.compatibility {
+  width: 100%; }
+  table.compatibility th, table.compatibility td {
+    width: 20%;
+    text-align: center; }
+  table.compatibility th:first-child, table.compatibility td:first-child {
+    width: 40%; }
+  table.compatibility .yep {
+    background-color: rgba(0, 255, 0, 0.5);
+    color: black; }
+  table.compatibility .in-dev {
+    background-color: rgba(255, 255, 0, 0.5);
+    color: black; }
+  table.compatibility .never {
+    background-color: #212121; }

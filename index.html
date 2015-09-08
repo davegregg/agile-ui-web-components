@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="css/theme/blood.css" id="theme">
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
+    <style>
+      #autoplay {
+        width: 2.5em;
+        height: 2.5em;
+      }
+    </style>
+
     <script src="./bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="./bower_components/dumb-button/dumb-button.html">
   </head>
@@ -19,6 +26,18 @@
   <body>
     <div class="reveal">
       <div class="slides">
+        <section data-background="#4527A0">
+          <h1>«listenable»</h1>
+          <p>This is an audio-enabled presentation.</p>
+          <p>
+            Make sure you have your volume up, your headphones on, and click
+            that highlighted arrow in the lower-right corner after the audio
+            has loaded.
+          </p>
+          <p>
+            <input id="autoplay" type="checkbox" checked> autoplay the presentation
+          </p>
+        </section>
         <section>
           <h1 class="normal-text">
             <span class="upper">AD</span>
@@ -103,7 +122,7 @@
         </section>
         <section>
           <h2>
-            <a xmlns:cc="http://creativecommons.org/ns#" href="http://curtis.schlak.com" property="cc:attributionName" rel="cc:attributionURL">Curtis Schlak</a>
+            <a xmlns:cc="http://creativecommons.org/ns#" href="http://curtis.schlak.com" property="cc:attributionName" rel="cc:attributionURL">curtis@schlak.com</a>
           </h2>
           <h3 class="normal-text">@realistschuckle</h3>
           <p>
@@ -134,362 +153,198 @@
         <section data-background="#BF360C">
           <section>
             <h1>UX</h1>
-            <aside class="notes">
-              I want to spend a little time talking with you about this
-              so-called user experience thing.
-            </aside>
           </section>
           <section>
             <img src="./imgs/ui.png">
-            <aside class="notes">
-              <p>
-                A lot of time, people equate user experience with user
-                interface. While we often focus on that as the user
-                experience, that does not totally encapsulate it.
-              </p>
-              <p>
-                Mind you, though, the user interface is an important
-                component to the experience a user has when working with our
-                software. This is one of my favorite examples of bad user
-                experience. Worse than just not aesthetically pleasing, it
-                confuses and overwhelms us with detail and no clear path to
-                accomplish our intended task.
-              </p>
-            </aside>
           </section>
           <section>
-            <p>look and sound</p>
-            <p>application interaction (feel)</p>
-            <p>information presentation</p>
-            <aside class="notes">
-              <p>
-                After having worked on projects across different media, I have
-                settled on these three areas as the three major concerns to
-                which we must design. While it would be nice to keep each of
-                these concerns separate from one another, in practice they
-                overlap.
-              </p>
-              <p>
-                Look and sound are that visual and audio palette that provides
-                aethetic meaning to the application. For enterprise desktop
-                applications, this often just means the colors of the user
-                interface. For video games, this means the ambient sound
-                track and the theme for the visual assets. These things set
-                the mood of the application. And, yes, enterprise desktop
-                applications have mood; it's just normally a grumpy mood.
-              </p>
-              <p>
-                Application interaction refers to the interaction that a user
-                has with the software. This can be as simple as a dropdown
-                arrow to indicate and provide a clickable area for the user to
-                select an option. It can be as intricate as explosions,
-                gun fire, enemy zombies exploding all happening at the same
-                time.
-              </p>
-              <p>
-                Finally, information presentation spans an ever-growing
-                aspect of most applications. Note that I did not write data
-                presentation. Just showing data rarely gets the job done.
-                Information emerges when we combine data with context and
-                purpose. Most people think about charts and tag clouds and
-                other numerically-oriented information. I also include in this
-                gap things like form layout which includes meta-information
-                about creating new transactions within the system.
-              </p>
-              <p>
-                Given these different areas of interest, how can we
-                effectively meet all those needs?
-              </p>
-            </aside>
+            <p><b>ambience</b>: look and sound</p>
+            <p><b>mechanics</b>: application interaction</p>
+            <p><b>throughput</b>: information presentation</p>
           </section>
         </section>
         <section data-background="#2E7D32">
           <section>
             <h1>ux workflows</h1>
-            <aside class="notes">
-              <p>
-                As a young programmer, I had a job at a commercial advertising
-                company. It was just like Mad Men but without so much scotch.
-                While there, I observed how the artists and copy writers would
-                engage a client to develop a piece of printed material or a
-                television spot.
-              </p>
-              <p>
-                It seems to me that most of the agile software development
-                methodologies tend to abandon the development of the user
-                experience to a process quite like the traditional media
-                process: sketch, refine, draw, refine, refine, refine, print.
-              </p>
-            </aside>
           </section>
           <section>
             <h2>traditional media</h2>
             <h3>two teams / two goals</h3>
-            <aside class="notes">
-              We don't do this one much in agile, but have encountered it.
-              This is where the developers and UX folk work with different
-              people at different times and when both get done with their
-              work, some poor schmuck has to put it all together. The
-              possible impedance mismatch of visual and software
-              implementation, here, has taught us that this method can incur
-              significant costs and is best avoided.
-            </aside>
           </section>
           <section>
             <h2>pure wireframing</h2>
             <h3>from basic to beautiful</h3>
-            <aside class="notes">
-              <p>
-                I remember that wireframing once had a lot of popularity once
-                upon a time. Even today, in games, we will use fake assets while
-                getting the game to work. Once we have that, we can drop in the
-                actual pretty, shaping the function to the form.
-              </p>
-              <p>
-                The main problem I encountered with this emerged with the
-                growing frustration of my bosses or clients who had to wait to
-                get something aesthetically pleasing <i>and</i> demonstrable
-                to the outside world.
-              </p>
-            </aside>
           </section>
           <section>
             <h2>UX first</h2>
             <h3>pretty. then, functional.</h3>
-            <aside class="notes">
-              This is the opposite of wireframing. Designers will make a
-              beautiful and completely inoperative user interface, normally
-              with clicky areas that will transition the app from one screen
-              to another. I've noticed that this method has become more and
-              more popular as more and more software looks for early funding.
-              Of course, without the proper technical representation, this
-              method can go drastically awry.
-            </aside>
           </section>
           <section>
             <h2>bootstrap'd</h2>
             <h3>stick with bootstrap</h3>
             <h4>or zurb</h4>
             <h4>or pure</h4>
-            <aside class="notes">
-              <p>
-                I don't know if you've noticed, but for a while there, every
-                site used bootstrap (or one of its cousins). We started to see
-                less diversity, more homogeneity, and it became more difficult
-                to stand out. To establish an identity.
-              </p>
-              <p>
-                The CSS toolkits have matured and allow for designers and
-                developers to hack their guts. However, they're opinionated,
-                those CSS toolkits, and you're stuck with those opinions.
-              </p>
-            </aside>
           </section>
           <section>
             <h2>ಠ_ಠ</h2>
-            <aside class="notes">
-              We work in an interactive medium, a collaborative medium. We
-              should have a better way to work. Unfortunately, the
-              foundations of the Web, HTML, CSS, and JavaScript, fail us as
-              a collaborative medium with which to build our users'
-              experience. We just need something better, something to allow us
-              to attack Web applications the way they should be. If only we
-              had...
-            </aside>
           </section>
         </section>
         <section data-background="#EF6C00">
           <section>
             <h1>web components!</h1>
-            <aside class="notes">
-              <p>
-                We've had the idea of components in one form or another since
-                script.aculo.us. Most recently, we have encounterd React,
-                Ractive, Knockout, and Ractive components as well as all the
-                JavaScript-based widget libraries like Kendo and Syncfusion.
-                While they're all good in their own way, Web components goes
-                one step further and integrates a custom widget directly into
-                the DOM rather than relying on DOM representations and
-                external JavaScript libraries. That's the real power of Web
-                components.
-              </p>
-              <p>
-                Web components relies on four extensions to the browser. Let's
-                take a look at those.
-              </p>
-            </aside>
           </section>
           <section>
             <h2>custom elements</h2>
-            <table class="compatibility">
-              <thead>
-                <tr>
-                  <th>IE 11/Edge</th>
-                  <th>Chrome</th>
-                  <th>Firefox</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>under consideration</td>
-                  <td>yep</td>
-                  <td>behind a flag</td>
-                </tr>
-              </tbody>
-            </table>
-            <pre><code data-trim>
-              document.registerElement('my-tag');
-            </code></pre>
-            <pre><code data-trim>
+            <div class="fragment">
+              register your custom element
+              <pre><code data-trim class="js">
+var prototype = Object.create(HTMLDivElement.prototype, {
+  uri: { value: undefined },
+  data: { value: undefined },
+  attachedCallback: function () {
+    this.uri = this.getAttribute('uri');
+    // Do some AJAXy stuff here...
+    this.data = content;
+    // Fire a data-received event
+  }
+});
+document.registerElement('declarative-ajax', HTMLDivElement.prototype);
+              </code></pre>
+            </div>
+            <div class="fragment">
+              and then use it in HTML
+              <pre><code data-trim class="html">
 &lt;body&gt;
-  &lt;my-tag color="red"&gt;Hello from my tag&lt;/my-tag&gt;
+  &lt;declarative-ajax uri="http://example.com/api"&gt;&lt;/declarative-ajax&gt;
 &lt;/body&gt;
-            </code></pre>
-            <aside class="notes">
-              Custom elements is an extension to the browser that allows you
-              to register new DOM elements. After you register that element,
-              you can use the tag as you would any other tag.
-            </aside>
+              </code></pre>
+            </div>
           </section>
           <section>
             <h2>templates</h2>
-            <table class="compatibility">
-              <thead>
-                <tr>
-                  <th>IE 11/Edge</th>
-                  <th>Chrome</th>
-                  <th>Firefox</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>in development</td>
-                  <td>yep</td>
-                  <td>yep</td>
-                </tr>
-              </tbody>
-            </table>
-            <pre><code data-trim>
+            <div class="fragment">
+              include it in your HTML
+              <pre><code data-trim class="html">
 &lt;template id="example-template"&gt;
-  &lt;img src=""&gt;
-  &lt;div&gt;From a template&lt;/div&gt;
+  &lt;img src="http://example.com/dummy.png"&gt;
+  &lt;div&gt;Bacon ipsum dolor amet brisket boudin&lt;/div&gt;
+  &lt;script&gt;alert('HELLO!');&lt;/script&gt;
 &lt;/template&gt;
-            </code></pre>
-            <pre><code data-trim>
-var link = document.querySelector("template");
-template.querySelector("img").src = "/imgs/ui.png";
-var clone = document.importNode(template.content, true);
-document.querySelector("#template-example").appendNode(clone);
-            </code></pre>
-            <aside class="notes">
-              Templates allow you to define a set of DOM elements that the
-              browser parser consumes, turns into DOM nodes, but does not put
-              it into the DOM tree. Instead, it allows you to access the
-              inactive DOM elements via JavaScript, manipulate it, clone it,
-              and put it into the active DOM.
-            </aside>
+              </code></pre>
+            </div>
+            <div class="fragment">
+              access and use it in your script
+              <pre><code data-trim class="js">
+function appendTemplate(imgSrc, content) {
+  // Get the template and set the image's source
+  var t = document.querySelector("template");
+  t.querySelector('img').src = imgSrc;
+  t.querySelector('div').innerHTML = content;
+
+  // Clone the content and put it in the DOM
+  var clone = document.importNode(t.content, true);
+  document.querySelector("#template-example").appendNode(clone);
+}
+              </code></pre>
+            </div>
           </section>
           <section>
             <h2>HTML imports</h2>
-            <table class="compatibility">
-              <thead>
-                <tr>
-                  <th>IE 11/Edge</th>
-                  <th>Chrome</th>
-                  <th>Firefox</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>under consideration</td>
-                  <td>yep</td>
-                  <td>nope. never.</td>
-                </tr>
-              </tbody>
-            </table>
-            <pre><code data-trim>
-              &lt;link id="my-tag-link" rel="import" href="/components/my-tag.html"&gt;
-            </code></pre>
-            <pre><code data-trim>
+            <div class="fragment">
+              import html using a link tag
+              <pre><code data-trim class="html">
+&lt;link id="my-tag-link" rel="import" href="/components/my-tag.html"&gt;
+              </code></pre>
+            </div>
+            <div class="fragment">
+              get the content from the link's import attribute
+              <pre><code data-trim class="js">
 var link = document.getElementById('my-tag-link');
-document.body.appendChild(link.import.cloneNode(true));
-            </code></pre>
-            <div id="template-example"></div>
-            <aside class="notes">
-              HTML imports allows you to create an external HTML file, either
-              a full document or fragment of a document, and declaratively
-              link the HTML into the document. This does not insert the HTML
-              into your document, but makes it available via an import
-              attribute of the link HTML DOM element. The content is not alive
-              until you clone it and put it into the DOM.
-            </aside>
+var content = link.import;
+var clone = content.cloneNode(true);
+document.body.appendChild(clone);
+              </code></pre>
+            </div>
           </section>
           <section>
             <h2>Shadow DOM</h2>
+            <div class="fragment">
+              In a document like this...
+              <pre><code data-trim class="html">
+&lt;div id="hostElement"&gt;&lt;/div&gt;
+&lt;p&gt;This is in the normal DOM&lt;/p&gt;
+              </code></pre>
+            </div>
+            <div class="fragment">
+              ...create a shadow root and add DOM to it...
+              <pre><code data-trim class="js">
+var shadow = document.querySelector("#hostElement").createShadowRoot();
+shadow.innerHTML = '&lt;p id="my-paragraph"&gt;Here is some new text&lt;/p&gt;' +
+                   '&lt;style&gt;p { color: red };&lt;/style&gt;';
+              </code></pre>
+            </div>
+            <div class="fragment">
+            ...I can't get to the &lt;p&gt; tag in the shadow DOM...
+              <pre><code data-trim class="js">
+document.getElementById('my-paragraph'); // Returns undefined
+              </code></pre>
+            </div>
+            <div class="fragment">
+              ...and the style only applies in the shadow DOM.
+              <pre><code data-trim class="html" data-noescape>
+<div style="color:red">Here is some new text</div><div>This is in the normal DOM</div>
+              </code></pre>
+            </div>
+          </section>
+          <section>
+            <h2>compatibility</h2>
             <table class="compatibility">
               <thead>
                 <tr>
-                  <th>IE 11/Edge</th>
+                  <th>Technology</th>
+                  <th>IE</th>
                   <th>Chrome</th>
-                  <th>Firefox</th>
+                  <th>FF</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>under consideration</td>
-                  <td>yep</td>
-                  <td>behind a flag</td>
+                  <td>custom elements</td>
+                  <td>maybe</td>
+                  <td class="yep">yep</td>
+                  <td>off</td>
+                </tr>
+                <tr>
+                  <td>&lt;template&gt;</td>
+                  <td class="in-dev">in dev</td>
+                  <td class="yep">yep</td>
+                  <td class="yep">yep</td>
+                </tr>
+                <tr>
+                  <td>HTML Imports</td>
+                  <td>maybe</td>
+                  <td class="yep">yep</td>
+                  <td class="never">never</td>
+                </tr>
+                <tr>
+                  <td>Shadow DOM</td>
+                  <td>maybe</td>
+                  <td class="yep">yep</td>
+                  <td>off</td>
                 </tr>
               </tbody>
             </table>
-            <pre><code data-trim>
-var shadow = document.querySelector("#hostElement").createShadowRoot();
-shadow.innerHTML = "&lt;p&gt;Here is some new text&lt;/p&gt;";
-shadow.innerHTML += "&lt;style&gt;p { color: red };&lt;/style&gt;";
-            </code></pre>
-            <div id="template-example"></div>
-            <aside class="notes">
-              Shadow DOM is a strange and beautiful beast. It creates a DOM
-              node in the larger DOM tree but does not allow access to its
-              shadowy children. It shows up in the visual tree but not the
-              logical tree. You can see in the example that I add a style
-              block to the shadow DOM. This will affect all paragraph tags in
-              the shadow DOM but not outside the shadow DOM. It provides
-              encapsulation of markup, behavior, and style. The final piece to
-              our puzzle.
-            </aside>
           </section>
           <section>
             <h2>we can think a new way</h2>
-            <aside class="notes">
-              Given this mix and match of supportable standards, we can pick
-              and choose what we'd like to use from this list to build a new
-              way to engage our users with a process to build excellent user
-              experiences that does not tie us down on a screen-by-screen or
-              page-by-page basis.
-            </aside>
           </section>
         </section>
         <section data-background="#0277BD">
           <section>
             <h1>a UX workflow with Web Components</h1>
-            <aside class="notes">
-              Sometimes a new technology allows us to change the way we work.
-              With the advent of Web components, we have a chance to revisit the
-              way we create and organize our work which, after all, is what a
-              process is all about.
-            </aside>
           </section>
           <section>
             <h2>interaction-oriented development</h2>
-            <aside class="notes">
-              If we have object-oriented and aspect-oriented development, then
-              let's coopt the meme and define our own interaction-oriented
-              development! I think it succinctly defines what we want in user
-              experience, to develop interactions through which the user can
-              use our application. Since we want to focus on interaction, we
-              need some guidelines for how to go about doing that.
-            </aside>
           </section>
           <section>
             <h2>common tactics</h2>
@@ -500,9 +355,6 @@ shadow.innerHTML += "&lt;style&gt;p { color: red };&lt;/style&gt;";
               <li>identify one-off components</li>
               <li>schedule screen/page and component creation separately</li>
             </ul>
-            <aside class="notes">
-              Talk about each of these things.
-            </aside>
           </section>
           <section>
             <h2>thorns</h2>
@@ -512,9 +364,6 @@ shadow.innerHTML += "&lt;style&gt;p { color: red };&lt;/style&gt;";
               <li>not building an app</li>
               <li>page-centric definition of done</li>
             </ul>
-            <aside class="notes">
-              Talk about each of these things.
-            </aside>
           </section>
         </section>
         <section data-background="#4E342E">
@@ -531,32 +380,14 @@ shadow.innerHTML += "&lt;style&gt;p { color: red };&lt;/style&gt;";
                 <img src="./imgs/polymer-logo.svg" style="border: 0; box-shadow: none;">
               </div>
             </p>
-            <aside class="notes">
-              <ul>
-                <li>history of polymer</li>
-                <li>auto polyfills the missing tech</li>
-                <li>shadow DOM vs. shady DOM</li>
-                <li>data binding</li>
-                <li>CSS variables</li>
-              </ul>
-            </aside>
           </section>
           <section>
-            <h2>elements.polymer-project.org</h2>
-            <iframe height="500" width="1024" src="https://elements.polymer-project.org"></iframe>
-            <aside class="notes">
-              Polymer gives you some basic web components, as well, in their
-              elements library. Talk about each of the sections.
-            </aside>
+            <h2>Polymer's catalog</h2>
+            <p><a href="https://elements.polymer-project.org">elements.polymer-project.org</a></p>
           </section>
           <section>
-            <h2>customelements.io</h2>
-            <iframe height="500" width="1024" src="https://customelements.io"></iframe>
-            <aside class="notes">
-              There's also a growing library of available open-source Web
-              components and a community around it those based on Polymer and
-              those written from the ground up.
-            </aside>
+            <h2>Community catalog</h2>
+            <p><a href="https://customelements.io">customelements.io</a></p>
           </section>
         </section>
         <section data-background="#D84315">
@@ -662,15 +493,35 @@ shadow.innerHTML += "&lt;style&gt;p { color: red };&lt;/style&gt;";
       </div>
     </div>
 
+    <audio src="./audio/audio.mp3" id="audio" preload="auto" volume="1.0"></audio>
+
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
     <script>
+      var loop = window.requestAnimationFrame || function (fn) {
+        setTimeout(fn, 100);
+      };
+      var audio = document.querySelector('#audio');
+      var currentIndices = { h: 0, v: 0 };
+      audio.addEventListener('canplaythrough', function () {
+        document.querySelector('.controls').style.display = 'block';
+      });
+      loop(function () {
+        var currentTime = audio.currentTime;
+      });
+      Reveal.addEventListener('ready', function (e) {
+        document.querySelector('.controls').style.display = 'none';
+      });
+      Reveal.addEventListener('slidechanged', function (e) {
+        // audio.currentTime = keyframes[event.indexh][event.indexv];
+      });
       Reveal.initialize({
         controls: true,
         progress: true,
         history: true,
         center: true,
         transition: 'slide',
+        touch: false,
         dependencies: [
           { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
