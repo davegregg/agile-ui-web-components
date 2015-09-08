@@ -28,4 +28,21 @@ SLIDE 7/1
 
 SLIDE 7/2
 
-    Because IDD
+    I tend to design things from the bottom-up. In-as-much, I have identified
+    some common tactics that can perform the basis of "interaction-driven
+    development". Paradoxically, IDD has formed in my mind as a top-down
+    development methodology, one that engages continual refinement as the
+    cornerstone on which to develop. As my drill seargeant used to yell at us,
+    "Shoot! Aim! Shoot!". In terms of IDD, this means that we design and
+    implement from low fidelity to high fidelity.
+
+    It's probably best if I provide an example of how to apply these tactics
+    with respect to the power that Web components allows us to wield.
+
+SLIDE 7/3
+
+    // Remove
+
+SLIDE 8
+
+    But, before I get to an example of IDD, I want to spend a moment
